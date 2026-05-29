@@ -118,11 +118,11 @@ The length, in bytes, of the buffer **key** directly following **parameterSet**.
 
 The byte sizes of the byte-encoded keys can be found in [FIPS 203](https://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.203.pdf) Section 8 Table 3. Many callers can instead dynamically query the required blob sizes using **BCryptExportKey** with `NULL` *pbOutput*.
 
-**BCRYPT_COMPOSITE_MLKEM_PRIVATE_BLOB** supports import and export of standard byte-encoded ML-KEM decapsulation keys per [PQ Composite ML-KEM](https://datatracker.ietf.org/doc/html/draft-ietf-lamps-pq-composite-kem). The blob has **dwMagic** value `BCRYPT_COMPOSITE_MLKEM_PRIVATE_MAGIC` and the **key** field contains the byte-encoded key.
+**BCRYPT_COMPOSITE_MLKEM_PRIVATE_BLOB** supports import and export of standard byte-encoded Composite-ML-KEM private keys per [PQ Composite ML-KEM](https://datatracker.ietf.org/doc/html/draft-ietf-lamps-pq-composite-kem). The blob has **dwMagic** value `BCRYPT_COMPOSITE_MLKEM_PRIVATE_MAGIC` and the **key** field contains the byte-encoded key.
 
-**BCRYPT_COMPOSITE_MLKEM_PUBLIC_BLOB** supports import and export of standard byte-encoded ML-KEM encapsulation keys per [PQ Composite ML-KEM](https://datatracker.ietf.org/doc/html/draft-ietf-lamps-pq-composite-kem). The blob has **dwMagic** value `BCRYPT_COMPOSITE_MLKEM_PUBLIC_MAGIC` and the **key** field contains the byte-encoded key.
+**BCRYPT_COMPOSITE_MLKEM_PUBLIC_BLOB** supports import and export of standard byte-encoded Composite-ML-KEM public keys per [PQ Composite ML-KEM](https://datatracker.ietf.org/doc/html/draft-ietf-lamps-pq-composite-kem). The blob has **dwMagic** value `BCRYPT_COMPOSITE_MLKEM_PUBLIC_MAGIC` and the **key** field contains the byte-encoded key.
 
-**BCRYPT_COMPOSITE_MLKEM_PRIVATE_IRTF_SEED_BLOB** supports import and export of ML-KEM seeds. The blob has **dwMagic**  value `BCRYPT_COMPOSITE_MLKEM_PRIVATE_IRTF_SEED_MAGIC` and the **key** field contains the 32-byte IRTF Composite ML-KEM seed per [Concrete Hybrid PQ/T Key Encapsulation Mechanisms](https://datatracker.ietf.org/doc/html/draft-irtf-cfrg-concrete-hybrid-kems), so **cbKey** is currently always `32`.
+**BCRYPT_COMPOSITE_MLKEM_PRIVATE_IRTF_SEED_BLOB** supports import and export of Composite-ML-KEM seeds. The blob has **dwMagic**  value `BCRYPT_COMPOSITE_MLKEM_PRIVATE_IRTF_SEED_MAGIC` and the **key** field contains the 32-byte IRTF Composite ML-KEM seed per [CFRG Concrete Hybrid KEMs](https://datatracker.ietf.org/doc/html/draft-irtf-cfrg-concrete-hybrid-kems), so **cbKey** is currently always `32`.
 
 ## Requirements
 
